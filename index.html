@@ -1,58 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Códigos QR</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Generador de QR</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Generador de Códigos QR</h1>
-        
-        <div class="input-section">
-            <label for="text-input">Texto o URL:</label>
-            <textarea 
-                id="text-input" 
-                placeholder="Ingresa el texto o URL que quieres convertir a QR..."
-                rows="4"
-            ></textarea>
-            
-            <div class="controls">
-                <label for="qr-size">Tamaño:</label>
-                <select id="qr-size">
-                    <option value="200">200x200</option>
-                    <option value="300" selected>300x300</option>
-                    <option value="400">400x400</option>
-                    <option value="500">500x500</option>
-                </select>
-                
-                <label for="error-correction">Corrección de errores:</label>
-                <select id="error-correction">
-                    <option value="L">Baja (7%)</option>
-                    <option value="M" selected>Media (15%)</option>
-                    <option value="Q">Alta (25%)</option>
-                    <option value="H">Máxima (30%)</option>
-                </select>
-            </div>
-            
-            <button id="generate-btn">Generar QR</button>
-        </div>
-        
-        <div class="output-section">
-            <div id="qr-container">
-                <canvas id="qr-canvas"></canvas>
-            </div>
-            
-            <div class="actions">
-                <button id="download-btn" disabled>Descargar PNG</button>
-                <button id="copy-btn" disabled>Copiar al portapapeles</button>
-            </div>
-        </div>
-        
-        <div id="error-message" class="error-message"></div>
-    </div>
+  <div class="container">
+    <h1>Generador de Código QR</h1>
+    <input type="text" id="textInput" placeholder="Escribe texto o URL" />
+    <button onclick="generateQR()">Generar QR</button>
+    <div id="qrcode"></div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
